@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Home from './components/Home';
 import Quiz from './components/Quiz';
+import Learning from './components/Learning';
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -71,6 +72,12 @@ function App() {
                 Quiz
               </button>
               <button
+                className={`nav-btn ${activeTab === 'learning' ? 'active' : ''}`}
+                onClick={() => setActiveTab('learning')}
+              >
+                Nauka
+              </button>
+              <button
                 className="nav-btn focus-btn"
                 onClick={toggleFocusMode}
                 title="Tryb Skupienia"
@@ -81,7 +88,9 @@ function App() {
           </nav>
 
           <main className="main-content">
-            {activeTab === 'home' ? <Home /> : <Quiz />}
+            {activeTab === 'home' && <Home />}
+            {activeTab === 'quiz' && <Quiz />}
+            {activeTab === 'learning' && <Learning />}
           </main>
         </>
       )}
