@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Home from './components/Home';
 import Quiz from './components/Quiz';
 import Learning from './components/Learning';
+import Calculator from './components/Calculator';
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -78,6 +79,12 @@ function App() {
                 Nauka
               </button>
               <button
+                className={`nav-btn ${activeTab === 'calculator' ? 'active' : ''}`}
+                onClick={() => setActiveTab('calculator')}
+              >
+                Kalkulator
+              </button>
+              <button
                 className="nav-btn focus-btn"
                 onClick={toggleFocusMode}
                 title="Tryb Skupienia"
@@ -91,6 +98,7 @@ function App() {
             {activeTab === 'home' && <Home />}
             {activeTab === 'quiz' && <Quiz />}
             {activeTab === 'learning' && <Learning />}
+            {activeTab === 'calculator' && <Calculator />}
           </main>
         </>
       )}

@@ -101,16 +101,16 @@ const Quiz = () => {
     };
 
     return (
-        <div className="quiz-container">
+        <div className="quiz-container animate-fade-in">
             {showScore ? (
-                <div className="score-section card">
+                <div className="score-section card animate-slide-up">
                     <h2>Koniec Quizu!</h2>
                     <p>Twój wynik to {score} z {questions.length}</p>
                     <p className="score-message">{getScoreMessage()}</p>
                     <button onClick={resetQuiz} className="reset-button">Zagraj ponownie</button>
                 </div>
             ) : (
-                <div className="question-section card">
+                <div className="question-section card animate-slide-up">
                     <div className="question-count">
                         <span>Pytanie {currentQuestion + 1}</span>/{questions.length}
                     </div>
