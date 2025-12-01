@@ -74,7 +74,7 @@ const ExcuseGenerator = () => {
     };
 
     const sendToBoss = () => {
-        alert("Wysłano do szefa! (Żartuję, nie zrobiliśmy tego... chyba 🤖)");
+        alert("Paweł i Michał wkrótce otrzymają wiadomość... chyba? 🤷🏻‍♂️🤖");
     };
 
     return (
