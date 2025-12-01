@@ -3,6 +3,10 @@ import Home from './components/Home';
 import Quiz from './components/Quiz';
 import Learning from './components/Learning';
 import Calculator from './components/Calculator';
+import ExcuseGenerator from './components/ExcuseGenerator';
+import PersonalityQuiz from './components/PersonalityQuiz';
+import RobotDays from './components/RobotDays';
+import WeekendCountdown from './components/WeekendCountdown';
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -85,11 +89,37 @@ function App() {
                 Kalkulator
               </button>
               <button
-                className="nav-btn focus-btn"
+                className={`nav-btn ${activeTab === 'excuses' ? 'active' : ''}`}
+                onClick={() => setActiveTab('excuses')}
+              >
+                Wymówki
+              </button>
+              <button
+                className={`nav-btn ${activeTab === 'personality' ? 'active' : ''}`}
+                onClick={() => setActiveTab('personality')}
+              >
+                Quiz Osobowości
+              </button>
+              <button
+                className={`nav-btn ${activeTab === 'robot' ? 'active' : ''}`}
+                onClick={() => setActiveTab('robot')}
+              >
+                Robot
+              </button>
+              <button
+                className={`nav-btn ${activeTab === 'countdown' ? 'active' : ''}`}
+                onClick={() => setActiveTab('countdown')}
+              >
+                Odliczanie
+              </button>
+              <button
+                className="nav-btn focus-btn icon-btn"
                 onClick={toggleFocusMode}
                 title="Tryb Skupienia"
               >
-                Focus Mode
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
               </button>
             </div>
           </nav>
@@ -99,6 +129,10 @@ function App() {
             {activeTab === 'quiz' && <Quiz />}
             {activeTab === 'learning' && <Learning />}
             {activeTab === 'calculator' && <Calculator />}
+            {activeTab === 'excuses' && <ExcuseGenerator />}
+            {activeTab === 'personality' && <PersonalityQuiz />}
+            {activeTab === 'robot' && <RobotDays />}
+            {activeTab === 'countdown' && <WeekendCountdown />}
           </main>
         </>
       )}
